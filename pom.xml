@@ -11,7 +11,7 @@
 	<groupId>com.spuppi.apirestfilmes</groupId>
 	<artifactId>heroku-apirest-filmes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>heroku-apirest-filmes</name>
+	<name>spuppi-api-filmes</name>
 	<description>Demo de API REST para cadastro e consulta de filmes.</description>
 	
 	<properties>
@@ -55,7 +55,6 @@
 	</dependencies>
 
 	<build>
-		<finalName>${artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
