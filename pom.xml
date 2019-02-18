@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.spuppi.apirestfilmes</groupId>
-	<artifactId>heroku-apirest-filmes</artifactId>
+	<artifactId>spuppi-api-filmes</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spuppi-api-filmes</name>
 	<description>Demo de API REST para cadastro e consulta de filmes.</description>
