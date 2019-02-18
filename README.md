@@ -1,5 +1,5 @@
 # apirest-filmes
-Demo de API RESTfull para consulta de filmes
+Demo de API RESTful para consulta de filmes
 
 Autor: Sullyvan Puppi
 Site: www.spuppi.com
