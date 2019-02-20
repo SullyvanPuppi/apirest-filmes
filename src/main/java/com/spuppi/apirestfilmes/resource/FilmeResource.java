@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -48,8 +49,15 @@ public class FilmeResource {
 	
 	@ApiOperation(value = "Retorna o filme pelo parâmetro ID informado na url")
 	@GetMapping(value="/{id}")
-	public Optional<Filme> buscarFilmeDif(@PathVariable(value="id") Long id){
+	public Optional<Filme> buscarFilme(@PathVariable(value="id") Long id){
 		Optional<Filme> filme = fr.findById(id);
+		return filme;
+	}
+	
+	@ApiOperation(value = "Retorna o filme pelo parâmetro nome informado na url")
+	@GetMapping(value="/filme{titulo}")
+	public Filme buscarFilmeNome(@RequestParam(value="titulo") String titulo){
+		Filme filme = fr.findByTitulo(titulo);
 		return filme;
 	}
 	
