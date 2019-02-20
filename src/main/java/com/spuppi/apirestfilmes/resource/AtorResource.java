@@ -1,5 +1,7 @@
 package com.spuppi.apirestfilmes.resource;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
@@ -40,6 +42,13 @@ public class AtorResource {
 	public @ResponseBody Iterable<Ator> listarAtores(){
 		Iterable<Ator> listaAtores = ar.findAll();
 		return listaAtores;
+	}
+	
+	@ApiOperation(value = "Retorna o ator pelo parâmetro ID informado na url")
+	@GetMapping(value="/{id}", produces = "application/json")
+	public Optional<Ator> buscarAtor(@PathVariable(value="id") Long id){
+		Optional<Ator> ator = ar.findById(id);
+		return ator;
 	}
 	
 	@ApiOperation(value = "Cadastrar novo Ator")

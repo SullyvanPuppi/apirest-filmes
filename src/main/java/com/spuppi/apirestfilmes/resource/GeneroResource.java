@@ -1,5 +1,7 @@
 package com.spuppi.apirestfilmes.resource;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
@@ -40,6 +42,13 @@ public class GeneroResource {
 	public @ResponseBody Iterable<Genero> listarGeneros(){
 		Iterable<Genero> listaGeneros = gr.findAll();
 		return listaGeneros;
+	}
+	
+	@ApiOperation(value = "Retorna o gênero pelo parâmetro ID informado na url")
+	@GetMapping(value="/{id}", produces = "application/json")
+	public Optional<Genero> buscarGenero(@PathVariable(value="id") Long id){
+		Optional<Genero> genero = gr.findById(id);
+		return genero;
 	}
 	
 	@ApiOperation(value = "Cadastrar novo Gênero")

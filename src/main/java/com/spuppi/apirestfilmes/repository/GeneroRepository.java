@@ -12,4 +12,6 @@ import com.spuppi.apirestfilmes.model.Genero;
  */
 public interface GeneroRepository extends JpaRepository<Genero, Long>{
 
+	Genero findById(long id);
+	
 }

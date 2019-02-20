@@ -12,4 +12,6 @@ import com.spuppi.apirestfilmes.model.Filme;
  */
 public interface FilmeRepository extends JpaRepository<Filme, Long>{
 
+	Filme findById(long id);
+	
 }

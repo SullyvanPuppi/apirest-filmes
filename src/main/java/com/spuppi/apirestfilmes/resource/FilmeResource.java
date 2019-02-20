@@ -1,5 +1,7 @@
 package com.spuppi.apirestfilmes.resource;
 
+import java.util.Optional;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
@@ -42,6 +44,13 @@ public class FilmeResource {
 	public @ResponseBody Iterable<Filme> listarFilmes(){
 		Iterable<Filme> listaFilmes = fr.findAll();
 		return listaFilmes;
+	}
+	
+	@ApiOperation(value = "Retorna o filme pelo parâmetro ID informado na url")
+	@GetMapping(value="/{id}")
+	public Optional<Filme> buscarFilmeDif(@PathVariable(value="id") Long id){
+		Optional<Filme> filme = fr.findById(id);
+		return filme;
 	}
 	
 	@ApiOperation(value = "Cadastrar novo filme")

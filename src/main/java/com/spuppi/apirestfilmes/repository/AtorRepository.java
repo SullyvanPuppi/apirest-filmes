@@ -12,4 +12,6 @@ import com.spuppi.apirestfilmes.model.Ator;
  */
 public interface AtorRepository extends JpaRepository<Ator, Long>{
 
+	Ator findById(long id);
+	
 }
