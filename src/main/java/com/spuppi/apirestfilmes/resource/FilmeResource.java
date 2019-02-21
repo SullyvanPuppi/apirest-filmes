@@ -61,6 +61,13 @@ public class FilmeResource {
 		return filme;
 	}
 	
+	@ApiOperation(value = "Retorna a lista de filmes por Ator informando ID do mesmo na URL")
+	@GetMapping(value="/ator/{id}", produces = "application/json")
+	public @ResponseBody Iterable<Filme> listarFilmesAtor(@PathVariable long id){
+		Iterable<Filme> listaFilmes = fr.findFilmeByAtor(id);
+		return listaFilmes;
+	}
+	
 	@ApiOperation(value = "Cadastrar novo filme")
 	@PostMapping
 	public Filme adicionarFilme(@Valid @RequestBody Filme filme) {

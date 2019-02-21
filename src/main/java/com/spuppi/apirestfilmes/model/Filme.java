@@ -7,7 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotBlank;
 
@@ -50,7 +51,8 @@ public class Filme implements Serializable{
 	@OneToOne
 	private Genero genero;
 	
-	@OneToMany
+	@ManyToMany
+	@JoinColumn(name="ator_id")
 	private List<Ator> atores;
 	
 	public List<Ator> getAtores() {
