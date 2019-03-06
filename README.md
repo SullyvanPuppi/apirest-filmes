@@ -9,6 +9,8 @@ LinkedIn: https://www.linkedin.com/in/sullyvanpuppi/
 API: https://spuppi-api-filmes.herokuapp.com/
 Documentação: https://spuppi-api-filmes.herokuapp.com/swagger-ui.html
 
+Sincronizado via SSH
+
 Recursos utilizados:
 
 -Spring Boot
